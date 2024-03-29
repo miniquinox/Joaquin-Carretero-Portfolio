@@ -977,9 +977,17 @@ main {
 
 .project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
 
-.project-item-icon-box {
-  --scale: 0.8;
+@keyframes slideInFromTopRight {
+  0% {
+    transform: translate(100%, -100%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
 
+.project-item-icon-box {
+  --scale: 0;
   background: var(--jet);
   color: var(--orange-yellow-crayola);
   position: absolute;
@@ -992,11 +1000,13 @@ main {
   opacity: 0;
   z-index: 1;
   transition: var(--transition-1);
+  animation: 0s slideInFromTopRight;
 }
 
 .project-item > a:hover .project-item-icon-box {
   --scale: 1;
   opacity: 1;
+  animation: 1s slideInFromTopRight;
 }
 
 .project-item-icon-box ion-icon { --ionicon-stroke-width: 50px; }
@@ -1008,7 +1018,7 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover img { transform: scale(1.1); }
+.project-item > a:hover img { transform: scale(1.01); }
 
 .project-title,
 .project-category { margin-left: 10px; }
