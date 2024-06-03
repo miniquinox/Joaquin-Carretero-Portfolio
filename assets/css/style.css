@@ -1517,12 +1517,24 @@ textarea.form-input::-webkit-resizer { display: none; }
    * #PORTFOLIO, BLOG
    */
 
-  .project-img, .blog-banner-box { border-radius: 16px; }
+  .project-img, .blog-banner-box { 
+    border-radius: 16px; 
+  }
 
-  .blog-posts-list { gap: 30px; }
+  .blog-posts-list { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 30px; 
+    justify-content: flex-start; 
+  }
 
-  .blog-content { padding: 25px; }
+  .blog-post-item { 
+    flex: 0 0 calc(50% - 30px); 
+  }
 
+  .blog-content { 
+    padding: 25px; 
+  }
 
 
   /**
